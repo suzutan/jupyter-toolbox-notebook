@@ -1,0 +1,11 @@
+version: "2"
+services:
+  jupyter:
+    build: .
+    environment:
+      JUPYTER_ENABLE_LAB: 1
+    ports:
+      - 8888:8888
+    volumes:
+      - ./work:/home/jovyan/work
+    command: start-notebook.sh --NotebookApp.iopub_data_rate_limit=1000000000.0
